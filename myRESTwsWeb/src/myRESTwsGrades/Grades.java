@@ -2,7 +2,6 @@ package myRESTwsGrades;
 
 import java.util.ArrayList;
 
-import myRESTwsExam.Exam;
 import myRESTwsStudent.Student;
 
 public class Grades {
