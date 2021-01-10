@@ -348,15 +348,20 @@ def student():
 
 if __name__ == '__main__':
 
-    path = 'http://localhost:8080/myRESTwsWeb/rest/checkuser'
-    studentid = input("Insert ID: ")
-    r = requests.post(url=path, json=[studentid])
-    usertype = str(r.content)[2:-1]
+    try:
+        path = 'http://localhost:8080/myRESTwsWeb/rest/checkuser'
+        studentid = input("Insert ID: ")
+        r = requests.post(url=path, json=[studentid])
+        usertype = str(r.content)[2:-1]
 
-    if usertype == "true" or usertype == "false":
-        if usertype == "true":
-            profesor()
+        if usertype == "true" or usertype == "false":
+            if usertype == "true":
+                profesor()
+            else:
+                student()
         else:
-            student()
-    else:
-        print(usertype)
+            print(usertype)
+    except:
+        print("Something when wrong while connecting to the server")
+
+
